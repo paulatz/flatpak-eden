@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>dev.eden_emu.eden</id>
+        <project_license>GPL-3.0-or-later</project_license>
+        <metadata_license>CC0-1.0</metadata_license>
+	<name>Eden</name>
+	<summary>Eden emulator</summary>
+	<description>
+		<p>Multiplatform FOSS Switch 1 emulator written in C++, derived from Yuzu and Sudachi </p>
+	</description>
+	<categories>
+		<category>Games</category>
+	</categories>
+	<url type="homepage">https://eden-emu.dev/</url>
+	<url type="help">https://eden-emu.dev/docs</url>
+	<url type="faq">git.eden-emu.dev/eden-emu/eden/src/branch/master/docs/user/README.md</url>
+	<launchable type="desktop-id">dev.eden_emu.eden.desktop</launchable>
+	<releases>
+		<release version="0.2.1" date="2026-06-01">
+			<url>https://git.eden-emu.dev/eden-emu/eden/releases/tag/v0.2.1</url>
+			<description>
+Changelog
+
+This is a hotfix release for 0.2.0, addressing some crashes and bugs that occurred in certain situations. CPU and graphics performance will remain largely the same.
+
+This release does not use SDL3, and remains on SDL2.
+Universal
+
+    The Windows auto updater now accounts for the current build ID and will properly fetch the corresponding build to your currently installed Eden
+    Fixed crashes and errors that could occur when large amounts of games and external content files were present
+    Fixed crashes on 12th-gen Intel CPUs
+    Fixed MK8DX freeze when the native controller applet was used
+    Fixed a rare case of weird noises playing on shutdown
+    Fixed mods that expect a real value out of DefaultDataSpace
+    Fixed some minor issues with emulated controller thread contention
+
+Internal
+
+    Fixed several build errors:
+        Newer Xbyak removed Xeon Phi features
+        Unused variable errors in NCE
+        Removed httplib version restrictions
+
+Packages
+Targets
+
+Each build is optimized for a specific architecture and uses a specific compiler.
+
+    aarch64/arm64: For devices that use the armv8-a instruction set; e.g. Snapdragon X, all Android devices, and Apple Silicon Macs.
+    amd64: For devices that use the amd64 (aka x86_64) instruction set; this is exclusively used by Intel and AMD CPUs and is only found on desktops.
+    v3: For devices that use the x86_64-v3 instruction set or newer; this is found on Ryzen, Intel 4th Generation (Haswell), and newer.
+
+PGO
+
+PGO builds usually perform ~10-30% better than standard builds, and are thus generally recommended for all users.
+			</description>
+		</release>
+	</releases>
+	<developer_name>Eden</developer_name>
+	<screenshots>
+		<screenshot type="default">
+			<image>
+				<!-- just a placeholder -->
+				https://eden-emu.dev/assets/eden_neon_logo-62W0Oofb.webp
+			</image>
+		</screenshot>
+	</screenshots>
+	<content_rating type="oars-1.1">
+		<!-- You can generate OpenArgeRatings Metadata here:
+		https://hughsie.github.io/oars/generate.html -->
+	</content_rating>
+	<agreement type="eula" version_id="2021.05.26">
+	No eula
+	</agreement>
+</component>

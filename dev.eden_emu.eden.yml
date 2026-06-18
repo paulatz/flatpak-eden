@@ -1,0 +1,46 @@
+app-id: dev.eden_emu.eden
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+command: eden
+separate-locales: false
+finish-args:
+  - --share=network
+  - --device=dri
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+modules:
+  - name: eden
+    buildsystem: simple
+    sources:
+      - type: file
+        url: https://stable.eden-emu.dev/v0.2.0/Eden-Linux-v0.2.0-amd64-clang-pgo.AppImage
+        size: 68093211
+        sha256: 68c8b5ace9772b0016a73c77089968b84708dace06ae5c9a472e21fab030465f
+        filename: Eden-Linux-v0.2.0-amd64-clang-pgo.AppImage
+        only-arches:
+          - x86_64
+
+      - type: file
+        path: dev.eden_emu.eden.appdata.xml
+
+      - type: file
+        path: dev.eden_emu.eden.desktop
+
+      #- type: file
+      #  path: dev.eden_emu.eden.svg
+
+    build-commands:
+      - chmod +x Eden-Linux-v0.2.0-amd64-clang-pgo.AppImage
+      - ./Eden-Linux-v0.2.0-amd64-clang-pgo.AppImage --appimage-extract
+      - rm -f squashfs-root
+      - cp -a AppDir/* "${FLATPAK_DEST}/"
+      - install -Dm0644 "AppDir/dev.eden_emu.eden.svg" "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/dev.eden_emu.eden.svg"
+      - install -Dm0644 "AppDir/dev.eden_emu.eden.desktop" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      - install -Dm644 dev.eden_emu.eden.appdata.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml"
+#      - find AppDir -type f -exec install -Dm 755 "{}" "${FLATPAK_DEST}" \;
+#      - install -Dt "${FLATPAK_DEST}/" AppDir/* 
+#      - install -Dm644 dev.eden_emu.eden.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+#      - install -Dm644 dev.eden_emu.eden.svg "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/dev.eden_emu.eden.svg"
+
