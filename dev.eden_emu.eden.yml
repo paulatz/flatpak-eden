@@ -15,10 +15,10 @@ modules:
     buildsystem: simple
     sources:
       - type: file
-        url: https://stable.eden-emu.dev/v0.2.0/Eden-Linux-v0.2.0-amd64-clang-pgo.AppImage
-        size: 68093211
-        sha256: 68c8b5ace9772b0016a73c77089968b84708dace06ae5c9a472e21fab030465f
-        filename: Eden-Linux-v0.2.0-amd64-clang-pgo.AppImage
+        url: https://stable.eden-emu.dev/v0.2.1/Eden-Linux-v0.2.1-amd64-clang-pgo.AppImage
+        size: 69276651
+        sha256: 7a28bf988b0648831989722bdbaa90ab31371b403808199813e0ea7c8b25ba6d
+        filename: Eden-Linux-v0.2.1-amd64-clang-pgo.AppImage
         only-arches:
           - x86_64
 
@@ -26,8 +26,8 @@ modules:
         path: dev.eden_emu.eden.appdata.xml
 
     build-commands:
-      - chmod +x Eden-Linux-v0.2.0-amd64-clang-pgo.AppImage
-      - ./Eden-Linux-v0.2.0-amd64-clang-pgo.AppImage --appimage-extract
+      - chmod +x Eden-Linux-v0.2.1-amd64-clang-pgo.AppImage
+      - ./Eden-Linux-v0.2.1-amd64-clang-pgo.AppImage --appimage-extract
       - rm -f squashfs-root
       - cp -a AppDir/* "${FLATPAK_DEST}/"
       - install -Dm0644 "AppDir/dev.eden_emu.eden.svg" "${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/dev.eden_emu.eden.svg"

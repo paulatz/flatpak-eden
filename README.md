@@ -8,3 +8,5 @@ flatpak install org.freedesktop.Platform/25.08 org.freedesktop.Sdk/25.08
 Then build and install locally with:
 flatpak-builder --install builddir --user --force-clean dev.eden_emu.eden.yml
 
+Note: can also be build with KDE runtime, which assures that the Qt theme matches the KDE one.
+

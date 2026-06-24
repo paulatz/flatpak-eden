@@ -19,7 +19,17 @@
 		<release version="0.2.1" date="2026-06-01">
 			<url>https://git.eden-emu.dev/eden-emu/eden/releases/tag/v0.2.1</url>
 			<description>
+
 Changelog
+
+Eden v0.2.1
+
+This is a hotfix release for 0.2.0, addressing some crashes and bugs that occurred in certain situations. CPU and graphics performance will remain largely the same.
+
+This release does not use SDL3, and remains on SDL2.
+
+
+Eden v0.2.0
 
 This is the first anniversary of Eden's inception, on May 10, 2025. It has been quite a hectic journey thus far, from drama, to server nukes, to DMCAs, to sysadmin nightmares, to exotic hardware/OS ports, to constant threats from all angles. Yet still, we survive, with countless improvements, bug fixes, performance enhancements, features, and so much more to show for it.
 
